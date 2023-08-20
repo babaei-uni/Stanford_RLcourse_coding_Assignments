@@ -1,12 +1,12 @@
-# CS234: Reinforcement Learning Winter 2019 Assignments
+# CS234: Winter 2019 Reinforcement Learning Assignments
 
-[youtube's playlist link](https://www.youtube.com/watch?v=FgzM3zpZ55o&list=PLoROMvodv4rOSOPzutgyCTapiGlY2Nd8u&pp=iAQB)
+[Link to the YouTube playlist](https://www.youtube.com/watch?v=FgzM3zpZ55o&list=PLoROMvodv4rOSOPzutgyCTapiGlY2Nd8u&pp=iAQB)
 
-[Assignment's link](http://web.stanford.edu/class/cs234/assignments.html)
+[Link to the assignments](http://web.stanford.edu/class/cs234/assignments.html)
 
-[lecture's link](http://web.stanford.edu/class/cs234/lecture.html)
+[Link to the lectures](http://web.stanford.edu/class/cs234/lecture.html)
 
 
 <hr>
 
-#### I want to learn about reinforcement learning, so I will try to solve the assignments of this course and share the solutions here.
+#### I aim to learn about reinforcement learning by engaging with and solving the assignments from this course. I will also share my solutions here.
