@@ -268,7 +268,7 @@ if __name__ == "__main__":
 
     # Make gym environment
     size = int(input("Enter the size of the map: "))
-    p = float(input("Enter the probability of hole in the map: "))
+    probability = float(input("Enter the probability of in the map: "))
 
     slippy = input("Do you want the map to be slippery? (y/n): ")
     if slippy == 'y':
@@ -276,7 +276,7 @@ if __name__ == "__main__":
     else:
         slippy = False
 
-    desc = generate_random_map(size=size, p=p)
+    desc = generate_random_map(size=size, p=1-probability)
     env = gym.make(args.env, render_mode=args.render_mode,
                    is_slippery=slippy, desc=desc)
 
