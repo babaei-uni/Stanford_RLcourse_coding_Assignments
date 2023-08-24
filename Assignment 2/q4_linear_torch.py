@@ -35,7 +35,9 @@ class Linear(DQN):
 
         ##############################################################
         ################ YOUR CODE HERE (3-4 lines) ##################
+        self.q_network = nn.Linear(n_channels*self.config.state_history*img_height*img_width, num_actions)
 
+        self.target_network = nn.Linear(n_channels*self.config.state_history*img_height*img_width, num_actions)
         ##############################################################
         ######################## END YOUR CODE #######################
 
@@ -57,11 +59,14 @@ class Linear(DQN):
             1. Look up torch.flatten
             2. You can forward a tensor through a network by simply calling it (i.e. network(tensor))
         """
-        out = None
+        out = torch.flatten(state, start_dim=1)
 
         ##############################################################
         ################ YOUR CODE HERE - 3-5 lines ##################
-
+        if network == "q_network":
+            out = self.q_network(out)
+        else:
+            out = self.target_network(out)
         ##############################################################
         ######################## END YOUR CODE #######################
 
@@ -84,6 +89,7 @@ class Linear(DQN):
 
         ##############################################################
         ################### YOUR CODE HERE - 1-2 lines ###############
+        self.target_network.load_state_dict(self.q_network.state_dict())
 
         ##############################################################
         ######################## END YOUR CODE #######################
@@ -127,9 +133,20 @@ class Linear(DQN):
         num_actions = self.env.num_actions()
         gamma = self.config.gamma
 
+
         ##############################################################
         ##################### YOUR CODE HERE - 3-5 lines #############
+        q_samp = torch.where(done_mask, rewards, rewards + (gamma * torch.max(target_q_values,dim=1).values))
 
+
+        actions = torch.tensor(actions, dtype=torch.long)
+
+
+        q_values = q_values[torch.arange(q_values.size(0)), actions]
+
+        loss = torch.nn.functional.mse_loss(q_samp, q_values)
+
+        return loss
         ##############################################################
         ######################## END YOUR CODE #######################
 
@@ -146,6 +163,7 @@ class Linear(DQN):
         """
         ##############################################################
         #################### YOUR CODE HERE - 1 line #############
+        self.optimizer = torch.optim.Adam(self.q_network.parameters())
 
         ##############################################################
         ######################## END YOUR CODE #######################
