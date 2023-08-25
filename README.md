@@ -4,7 +4,7 @@
 
 [Link to the assignments](http://web.stanford.edu/class/cs234/assignments.html)
 
-[Link to the lectures](http://web.stanford.edu/class/cs234/lecture.html)
+[Link to the lectures](http://web.stanford.edu/class/cs234/modules.html)
 
 
 <hr>
