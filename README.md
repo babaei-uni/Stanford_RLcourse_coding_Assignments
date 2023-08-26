@@ -1,6 +1,5 @@
-# CS234: Winter 2019 Reinforcement Learning Assignments
-
-[Link to the YouTube playlist](https://www.youtube.com/watch?v=FgzM3zpZ55o&list=PLoROMvodv4rOSOPzutgyCTapiGlY2Nd8u&pp=iAQB)
+# CS 234 Winter 2023 Reinforcement Learning Assignments
+[Link to the YouTube playlist CS 234 Winter 2019](https://www.youtube.com/watch?v=FgzM3zpZ55o&list=PLoROMvodv4rOSOPzutgyCTapiGlY2Nd8u&pp=iAQB)
 
 [Link to the assignments](http://web.stanford.edu/class/cs234/assignments.html)
 
